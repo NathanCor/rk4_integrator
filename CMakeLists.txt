@@ -12,11 +12,3 @@ target_include_directories(rk4_integrator INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
 )
-
-# --- Optionnel : Compiler les exemples ---
-option(RK4_BUILD_EXAMPLES "Build the examples" ON)
-
-if(RK4_BUILD_EXAMPLES)
-    add_executable(basic_example examples/basic_example.cpp)
-    target_link_libraries(basic_example PRIVATE rk4_integrator)
-endif()
